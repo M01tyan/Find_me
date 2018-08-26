@@ -2,8 +2,10 @@
   "name": "Find_me",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.5.1",
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
+    "material-ui": "^0.20.2",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

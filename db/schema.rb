@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_24_134746) do
+ActiveRecord::Schema.define(version: 2018_08_26_063146) do
 
   create_table "tests", force: :cascade do |t|
     t.string "index"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tops", force: :cascade do |t|
+    t.string "name"
+    t.string "u_name"
+    t.string "d_name"
+    t.integer "class_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
