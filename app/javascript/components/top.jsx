@@ -10,6 +10,9 @@ export default class Counter extends Component {
       <div className="container">
         <Card className="card">
           <CardContent>
+            <img src="" />
+          </CardContent>
+          <CardContent>
             <Typography color="textSecondary">
               {this.props.u_name}
             </Typography>
