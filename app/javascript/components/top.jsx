@@ -11,14 +11,14 @@ import sr from './ScrollReveal'
 export default class Counter extends Component {
   componentDidMount() {
     const config = {
-      origin: 'right',
+      origin: 'left',
       duration: 1000,
       delay: 150,
-      distance: '500px',
+      distance: '50px',
       scale: 1,
       easing: 'ease',
     }
-    sr.reveal(this.refs.test, config)
+    sr.reveal(this.refs.logo, config)
   }
 
   render() {
@@ -38,9 +38,14 @@ export default class Counter extends Component {
                   <Typography color="textSecondary">
                     {this.props.d_name}学部
                   </Typography>
-                  <Typography variant="headline" className="myname">
-                    {this.props.name}
-                  </Typography>
+                  <div className="myname">
+                    <Typography variant="headline">
+                      {this.props.name}
+                    </Typography>
+                    <Typography color="textSecondary">
+                      Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
+                    </Typography>
+                  </div>
                   <br/>
                   <Typography color="textSecondary">
                     Tel: 080-2725-8866
@@ -73,15 +78,11 @@ export default class Counter extends Component {
               </div>
             </div>
           </Card>
-          <div className="logo">
+          <div className="logo" ref="logo">
             <img src="https://raw.githubusercontent.com/M01tyan/Find_me/master/app/assets/images/facebook_logo.png" className="facebook" />
             <img src="https://raw.githubusercontent.com/M01tyan/Find_me/master/app/assets/images/github_logo.png" className="github" />
           </div>
         </div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <h1 className="test" ref="test">
-          Hello, World!
-        </h1>
       </div>
     )
   }
