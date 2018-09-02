@@ -13,8 +13,8 @@ import sr from './ScrollReveal'
 import ToDoCard from './todocard'
 import BaseInfo from './base_info'
 import Skill from './skill'
-import Facebook from './facebook_logo.png'
-import Github from './github_logo.png'
+import Facebook from './images/facebook_logo.png'
+import Github from './images/github_logo.png'
 
 export default class Top extends Component {
   componentDidMount() {
@@ -37,8 +37,12 @@ export default class Top extends Component {
                     graduate={this.props.graduate} birthplace={this.props.birthplace} highschool={this.props.highschool} licenses={this.props.licenses} hobby={this.props.hobby}
           />
           <div style={styles.logo} ref="logo">
-            <img src={Facebook} style={styles.facebook} />
-            <img src={Github} style={styles.github} />
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&privacy_source=timeline_gear_menu">
+              <img src={Facebook} style={styles.facebook} />
+            </a>
+            <a href="https://github.com/M01tyan">
+              <img src={Github} style={styles.github} />
+            </a>
           </div>
         </div>
         <h2 style={styles.h2}ref="logo">これまでの制作物</h2>
