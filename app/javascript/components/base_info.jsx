@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import sr from './ScrollReveal'
-import Icon from './icon.jpg'
+import Icon from './images/icon.jpg'
 
 export default class BaseInfo extends Component {
 	componentDidMount() {
