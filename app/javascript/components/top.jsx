@@ -4,11 +4,19 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
+import Collapse from '@material-ui/core/Collapse'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import sr from './ScrollReveal'
+import ToDoCard from './todocard'
+import BaseInfo from './base_info'
+import Skill from './skill'
+import Facebook from './facebook_logo.png'
+import Github from './github_logo.png'
 
-export default class Counter extends Component {
+export default class Top extends Component {
   componentDidMount() {
     const config = {
       origin: 'left',
@@ -23,66 +31,22 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="container-card">
-          <Card className="card">
-            <div className="card-base">
-              <CardContent>
-                <Avatar src="https://raw.githubusercontent.com/M01tyan/Find_me/master/app/assets/images/icon.jpg" className="icon" />
-              </CardContent>
-              <CardContent>
-                <div className="detail">
-                  <Typography color="textSecondary">
-                    {this.props.u_name}
-                  </Typography>
-                  <Typography color="textSecondary">
-                    {this.props.d_name}学部
-                  </Typography>
-                  <div className="myname">
-                    <Typography variant="headline">
-                      {this.props.name}
-                    </Typography>
-                    <Typography color="textSecondary">
-                      Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
-                    </Typography>
-                  </div>
-                  <br/>
-                  <Typography color="textSecondary">
-                    Tel: 080-2725-8866
-                  </Typography>
-                  <Typography color="textSecondary">
-                    Email: kanta01m.tyan@gmail.com
-                  </Typography>
-                </div>
-              </CardContent>
-            </div>
-            <CardActions className="button">
-                <Button size="small">Show Detail</Button>
-              </CardActions>
-            <div className="card-detail">
-              <div className="item">
-                <Typography>
-                  性別
-                </Typography>
-                <Typography>
-                  {this.props.gender}
-                </Typography>
-              </div>
-              <div className="item">
-                <Typography>
-                  生年月日
-                </Typography>
-                <Typography>
-                  {this.props.birthday}
-                </Typography>
-              </div>
-            </div>
-          </Card>
-          <div className="logo" ref="logo">
-            <img src="https://raw.githubusercontent.com/M01tyan/Find_me/master/app/assets/images/facebook_logo.png" className="facebook" />
-            <img src="https://raw.githubusercontent.com/M01tyan/Find_me/master/app/assets/images/github_logo.png" className="github" />
+      <div style={styles.container}>
+        <div style={styles.card}>
+          <BaseInfo name={this.props.name} u_name={this.props.u_name} d_name={this.props.d_name} gender={this.props.gender} birthday={this.props.birthday}
+                    graduate={this.props.graduate} birthplace={this.props.birthplace} highschool={this.props.highschool} licenses={this.props.licenses} hobby={this.props.hobby}
+          />
+          <div style={styles.logo} ref="logo">
+            <img src={Facebook} style={styles.facebook} />
+            <img src={Github} style={styles.github} />
           </div>
         </div>
+        <h2 style={styles.h2}ref="logo">これまでの制作物</h2>
+        <div style={styles.todoCard}>
+          <ToDoCard iamge_src={Facebook} title="会津大学アプリケーション" />
+          <ToDoCard iamge_src={Facebook} title="Fime me サイト" />
+        </div>
+        <Skill />
       </div>
     )
   }
@@ -92,4 +56,45 @@ Counter.propTypes = {
   name: PropTypes.string,
   u_name: PropTypes.string,
   d_name: PropTypes.string,
+}
+
+const styles = {
+  container: {
+    backgroundColor: '#dc143c',
+    paddingTop: 100,
+    paddinBottom: 100,
+    paddinRight: 0,
+    paddingLeft: 0,
+  },
+  card: {
+    display:'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  logo: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  facebook: {
+    width: 50,
+    height: 50,
+    marginBottom: 20,
+  },
+  github: {
+    width: 35,
+    height: 35,
+  },
+  todoCard: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  h2: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 50,
+    color: '#fff',
+  },
 }
