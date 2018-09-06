@@ -34,8 +34,9 @@ export default class History extends Component {
         <HistoryItems text="大学3年生の春からOGCとの共同IoTプロジェクトに参加" />
         <HistoryItems text="会津てらこやネットワークに参加し、ボランティア活動を行う" />
         <HistoryItems text="大学3年生の6月に逆求人イベントに参加、就職活動を開始" />
-        <HistoryItems text="パソナテック、GAテクノロジーズ、イプロスなどのインターンに参加" />
-        <HistoryItems text="2018年8月27日 Fine me開発開始" />
+        <HistoryItems text="パソナテック、GAテクノロジーズ、イプロス、NTTドコモのインターンに参加" />
+        <HistoryItems text="2018年8月27日 Find me開発開始" />
+        <HistoryItems text="2018年月日 Find meサービス開始" />
   	  </div>
   	)
   }

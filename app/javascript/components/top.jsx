@@ -14,6 +14,7 @@ import ToDoCard from './todocard'
 import BaseInfo from './base_info'
 import Skill from './skill'
 import History from './history'
+import Career from './career'
 import Facebook from './images/facebook_logo.png'
 import Github from './images/github_logo.png'
 
@@ -54,6 +55,7 @@ export default class Top extends Component {
         </div>
         <Skill />
         <History />
+        <Career />
       </div>
     )
   }

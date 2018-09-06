@@ -34,13 +34,14 @@ export default class BaseInfo extends Component {
       changeCard: {
       	height: 250,
       },
-      state: false
+      state: false,
+      text: "Show Detail",
     }
   }
 
   handleExpandClick() {
-    this.setState((previousState, currentprops) => { if(this.state.state == false) return {style: { display: "block"}, changeCard: { height: 540}, state: true}
-                    else return {style: {display: "none"}, changeCard: { height: 250}, state: false} });
+    this.setState((previousState, currentprops) => { if(this.state.state == false) return {style: { display: "block"}, changeCard: { height: 540}, state: true, text: "Close Detail"}
+                    else return {style: {display: "none"}, changeCard: { height: 250}, state: false, text: "Show Detail"} });
   }
 
   render() {
@@ -77,7 +78,7 @@ export default class BaseInfo extends Component {
               </CardContent>
             </div>
             <CardActions style={styles.button}>
-              <Button size="small" onClick={ () => this.handleExpandClick()}>Show Detail</Button>
+              <Button size="small" onClick={ () => this.handleExpandClick()}>{this.state.text}</Button>
             </CardActions>
               <CardContent style={this.state.style}>
                 <Typography paragraph style={styles.detail}>
@@ -87,7 +88,7 @@ export default class BaseInfo extends Component {
                   <p style={styles.p}>生年月日:</p><p style={styles.p}>{this.props.birthday}</p>
                 </Typography>
                 <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>卒業年度:</p><p style={styles.p}>{this.props.graduate}</p>
+                  <p style={styles.p}>卒業年度:</p><p style={styles.p}>{this.props.graduate}年</p>
                 </Typography>
                 <Typography paragraph style={styles.detail}>
                   <p style={styles.p}>出身地:</p><p style={styles.p}>{this.props.birthplace}</p>
