@@ -27,7 +27,7 @@ export default class TodoCard extends Component {
         <Card style={styles.card}>
           <CardContent style={styles.item}>
             <Typography>
-              <img src={this.props.iamge_src} style={styles.image} />
+              <img src={this.props.image_src} style={styles.image} />
             </Typography>
             <Typography style={styles.title}>
                {this.props.title}

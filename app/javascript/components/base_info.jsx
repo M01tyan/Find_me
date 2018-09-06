@@ -80,26 +80,26 @@ export default class BaseInfo extends Component {
               <Button size="small" onClick={ () => this.handleExpandClick()}>Show Detail</Button>
             </CardActions>
               <CardContent style={this.state.style}>
-                <Typography paragraph>
-                  性別: {this.props.gender} 
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>性別:</p><p style={styles.p}>{this.props.gender}</p> 
                 </Typography>
-                <Typography paragraph>
-                  生年月日: {this.props.birthday}
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>生年月日:</p><p style={styles.p}>{this.props.birthday}</p>
                 </Typography>
-                <Typography paragraph>
-                  卒業年度: {this.props.graduate}
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>卒業年度:</p><p style={styles.p}>{this.props.graduate}</p>
                 </Typography>
-                <Typography paragraph>
-                  出身地: {this.props.birthplace}
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>出身地:</p><p style={styles.p}>{this.props.birthplace}</p>
                 </Typography>
-                <Typography paragraph>
-                  出身高校: {this.props.highschool}
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>出身高校:</p><p style={styles.p}>{this.props.highschool}</p>
                 </Typography>
-                <Typography paragraph>
-                  資格: {this.props.licenses}
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>資格:</p><p style={styles.p}>{this.props.licenses}</p>
                 </Typography>
-                <Typography paragraph>
-                  趣味: {this.props.hobby}
+                <Typography paragraph style={styles.detail}>
+                  <p style={styles.p}>趣味:</p><p style={styles.p}>{this.props.hobby}</p>
                 </Typography>
               </CardContent>
           </Card>
@@ -135,5 +135,13 @@ const styles = {
 		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
-	}
+	},
+  detail: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  p: {
+    display: 'flex',
+    flex: 1,
+  }
 }
