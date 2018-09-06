@@ -13,6 +13,7 @@ import sr from './ScrollReveal'
 import ToDoCard from './todocard'
 import BaseInfo from './base_info'
 import Skill from './skill'
+import History from './history'
 import Facebook from './images/facebook_logo.png'
 import Github from './images/github_logo.png'
 
@@ -47,10 +48,12 @@ export default class Top extends Component {
         </div>
         <h2 style={styles.h2}ref="logo">これまでの制作物</h2>
         <div style={styles.todoCard}>
-          <ToDoCard iamge_src={Facebook} title="会津大学アプリケーション" />
-          <ToDoCard iamge_src={Facebook} title="Fime me サイト" />
+          <ToDoCard image_src={Facebook} title="会津大学アプリケーション" />
+          <ToDoCard image_src={Facebook} title="OGCとのIoTプロジェクト" />
+          <ToDoCard image_src={Facebook} title="Fime me サイト" />
         </div>
         <Skill />
+        <History />
       </div>
     )
   }
