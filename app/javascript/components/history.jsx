@@ -43,9 +43,21 @@ export default class History extends Component {
 }
 
 class HistoryItems extends Component {
+  componentDidMount() {
+    const config = {
+      origin: 'left',
+      duration: 1000,
+      delay: 150,
+      distance: '50px',
+      scale: 1,
+      easing: 'ease',
+      reset: true,
+    }
+    sr.reveal(this.refs.history_item, config)
+  }
   render() {
     return (
-      <div style={styles.arrow}>
+      <div style={styles.arrow} ref="history_item">
         <img src={Arrow} />
         <p style={styles.p}>{this.props.text}</p>
       </div>
@@ -56,7 +68,7 @@ class HistoryItems extends Component {
 const styles = {
   h2: {
     color: '#fff',
-    marginTop: 100,
+    marginTop: 200,
     display: 'flex',
     justifyContent: 'center',
   },
