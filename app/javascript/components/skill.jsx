@@ -28,6 +28,7 @@ export default class Skill extends Component {
   	  	<ProgSkill lang="HTML/CSS" period="3" />
   	  	<ProgSkill lang="Python" period="2" />
   	  	<ProgSkill lang="C++" period="1" />
+        <ProgSkill lang="Ruby on Rails" period="1" />
   	  </div>
   	)
   }
