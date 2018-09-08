@@ -6,8 +6,8 @@ export default class Header extends Component {
 			<div style={styles.header}>
 				<h1 style={styles.logo}>Find me</h1>
 				<div style={styles.links}>
-					<h2 style={styles.h2}>Home</h2>
-					<h2 style={styles.h2}>訪問企業一覧</h2>
+					<p style={styles.h2}>Home</p>
+					<p style={styles.h2}>訪問企業一覧</p>
 				</div>
 			</div>
 		)
@@ -17,20 +17,26 @@ export default class Header extends Component {
 const styles = {
 	header: {
 		backgroundColor: '#fff',
-		padding: 15,
+		padding: 0,
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-between',
+		width: '100%',
+		position: 'fixed',
+		zIndex: 1,
+		opacity: 0.98,
 	},
 	logo: {
 		color: '#dc143c',
+		marginTop: 10,
+		marginLeft: 10,
 	},
 	links: {
 		display: 'flex',
 		flexDirection: 'row',
 	},
 	h2: {
-		marginRight: 20,
+		marginRight: 10,
 		color: '#dc143c',
 	},
 }

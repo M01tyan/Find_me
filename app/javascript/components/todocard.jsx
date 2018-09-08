@@ -23,7 +23,7 @@ export default class TodoCard extends Component {
   render() {
     return (
       <div style={styles.todoCard} ref="todocard">
-      <a href="/" style={styles.a} >
+      <a href="" style={styles.a} >
         <Card style={styles.card}>
           <CardContent style={styles.item}>
             <Typography>
@@ -45,6 +45,9 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-around',
     marginBottom: 50,
+  },
+  a: {
+    textDecoration: 'none',
   },
   card: {
     marginTop: 50,

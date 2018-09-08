@@ -46,64 +46,64 @@ export default class BaseInfo extends Component {
 
   render() {
   	return (
-  		<Card style={this.state.changeCard} style={styles.card}>
-            <div style={styles.cardBase}>
-              <CardContent>
-                <Avatar src={Icon} style={styles.icon} refs="logo"/>
-              </CardContent>
-              <CardContent>
-                <div style={styles.baseInfo}>
-                  <Typography color="textSecondary">
-                    {this.props.u_name}
-                  </Typography>
-                  <Typography color="textSecondary">
-                    {this.props.d_name}学部
-                  </Typography>
-                  <div style={styles.myName}>
-                    <Typography variant="headline">
-                      {this.props.name}
-                    </Typography>
-                    <Typography color="textSecondary">
-                      Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
-                    </Typography>
-                  </div>
-                  <br/>
-                  <Typography color="textSecondary">
-                    Tel: 080-2725-8866
-                  </Typography>
-                  <Typography color="textSecondary">
-                    Email: kanta01m.tyan@gmail.com
-                  </Typography>
-                </div>
-              </CardContent>
+  		<Card style={this.state.changeCard} style={styles.card} >
+      	<div style={styles.cardBase}>
+          <CardContent>
+            <Avatar src={Icon} style={styles.icon} refs="logo"/>
+          </CardContent>
+          <CardContent>
+          	<div style={styles.baseInfo}>
+              <Typography color="textSecondary">
+              	{this.props.u_name}
+              </Typography>
+              <Typography color="textSecondary">
+                {this.props.d_name}学部
+              </Typography>
+              <div style={styles.myName}>
+                <Typography variant="headline">
+                  {this.props.name}
+                </Typography>
+                <Typography color="textSecondary">
+                  Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
+                </Typography>
+              </div>
+              <br/>
+              <Typography color="textSecondary">
+                Tel: 080-2725-8866
+              </Typography>
+              <Typography color="textSecondary">
+                Email: kanta01m.tyan@gmail.com
+              </Typography>
             </div>
-            <CardActions style={styles.button}>
-              <Button size="small" onClick={ () => this.handleExpandClick()}>{this.state.text}</Button>
-            </CardActions>
-              <CardContent style={this.state.style}>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>性別:</p><p style={styles.p}>{this.props.gender}</p> 
-                </Typography>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>生年月日:</p><p style={styles.p}>{this.props.birthday}</p>
-                </Typography>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>卒業年度:</p><p style={styles.p}>{this.props.graduate}年</p>
-                </Typography>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>出身地:</p><p style={styles.p}>{this.props.birthplace}</p>
-                </Typography>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>出身高校:</p><p style={styles.p}>{this.props.highschool}</p>
-                </Typography>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>資格:</p><p style={styles.p}>{this.props.licenses}</p>
-                </Typography>
-                <Typography paragraph style={styles.detail}>
-                  <p style={styles.p}>趣味:</p><p style={styles.p}>{this.props.hobby}</p>
-                </Typography>
-              </CardContent>
-          </Card>
+          </CardContent>
+        </div>
+        <CardActions style={styles.button}>
+          <Button size="small" onClick={ () => this.handleExpandClick()}>{this.state.text}</Button>
+        </CardActions>
+          <CardContent style={this.state.style}>
+            <Typography paragraph style={styles.detail}>
+              <p style={styles.p}>性別:</p><p style={styles.p}>{this.props.gender}</p>
+            </Typography>
+            <Typography paragraph style={styles.detail}>
+              <p style={styles.p}>生年月日:</p><p style={styles.p}>{this.props.birthday}</p>
+            </Typography>
+            <Typography paragraph style={styles.detail}>
+            	<p style={styles.p}>卒業年度:</p><p style={styles.p}>{this.props.graduate}年</p>
+            </Typography>
+            <Typography paragraph style={styles.detail}>
+              <p style={styles.p}>出身地:</p><p style={styles.p}>{this.props.birthplace}</p>
+            </Typography>
+            <Typography paragraph style={styles.detail}>
+              <p style={styles.p}>出身高校:</p><p style={styles.p}>{this.props.highschool}</p>
+            </Typography>
+            <Typography paragraph style={styles.detail}>
+              <p style={styles.p}>資格:</p><p style={styles.p}>{this.props.licenses}</p>
+            </Typography>
+            <Typography paragraph style={styles.detail}>
+              <p style={styles.p}>趣味:</p><p style={styles.p}>{this.props.hobby}</p>
+            </Typography>
+          </CardContent>
+      </Card>
   	)
   }
 }
@@ -144,5 +144,5 @@ const styles = {
   p: {
     display: 'flex',
     flex: 1,
-  }
+  },
 }

@@ -35,7 +35,7 @@ export default class Top extends Component {
   render() {
     return (
       <div style={styles.container}>
-        <div style={styles.card}>
+        <div style={styles.card} id="card">
           <BaseInfo name={this.props.name} u_name={this.props.u_name} d_name={this.props.d_name} gender={this.props.gender} birthday={this.props.birthday}
                     graduate={this.props.graduate} birthplace={this.props.birthplace} highschool={this.props.highschool} licenses={this.props.licenses} hobby={this.props.hobby}
           />
@@ -48,25 +48,19 @@ export default class Top extends Component {
             </a>
           </div>
         </div>
-        <h2 style={styles.h2}ref="logo">これまでの制作物</h2>
+        <h2 style={styles.h2} ref="logo" id="todo_card">これまでの制作物</h2>
         <div style={styles.todoCard}>
           <ToDoCard image_src={Facebook} title="会津大学アプリケーション" />
           <ToDoCard image_src={Facebook} title="OGCとのIoTプロジェクト" />
           <ToDoCard image_src={Facebook} title="Fime me サイト" />
         </div>
-        <Skill />
-        <History />
-        <Career />
-        <SelfPR />
+        <Skill id="skill"/>
+        <History id="history"/>
+        <Career id="career"/>
+        <SelfPR id="self_pr"/>
       </div>
     )
   }
-}
-
-Counter.propTypes = {
-  name: PropTypes.string,
-  u_name: PropTypes.string,
-  d_name: PropTypes.string,
 }
 
 const styles = {
