@@ -17,3 +17,10 @@ body {
 	margin: 0;
 	background-color: #dc143c;
 }
+a {
+	text-decoration: none;
+}
+a:hover {
+	background-color: transparent;
+	text-decoration: underline;
+}

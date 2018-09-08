@@ -58,18 +58,19 @@ const styles = {
   img: {
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
+    marginRight: 200,
     position: 'relative',
     marginLeft: '10%',
 
   },
   absolute: {
     position: 'absolute',
-    left: 300,
-    top: 110,
+    left:490,
   },
   absolute_arrow: {
     position: 'absolute',
-    left: 620,
+    left: 810,
     top: 110,
   }
 }

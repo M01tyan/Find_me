@@ -36,8 +36,8 @@ export default class Skill extends Component {
 
 class ProgSkill extends Component {
   render() {
-    const items = []
-    let j
+    const items = [];
+    let j;
     for(j=0; j<this.props.period; j++){
       items.push(<img src={StarGood} />)
     }
