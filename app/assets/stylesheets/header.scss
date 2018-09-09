@@ -1,0 +1,25 @@
+.header {
+	background-color: #fff;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	opacity: 0.98;
+	.header-logo {
+		color: #dc143c;
+		margin-top: 10px;
+		margin-left: 10px;
+	}
+	.header-links {
+		display: flex;
+		flex-direction: row;
+	}
+	.link {
+		margin-top: 15px;
+		margin-right: 10px;
+		color: #dc143c;
+	}
+}

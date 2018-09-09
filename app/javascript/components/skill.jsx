@@ -21,14 +21,14 @@ export default class Skill extends Component {
   render() {
   	return (
   	  <div ref="skill">
-  	  	<h2 style={styles.h2}>プログラミングレベル</h2>
-  	  	<ProgSkill lang="C" period="3" />
-  	  	<ProgSkill lang="Java" period="3" />
-  	  	<ProgSkill lang="JavaScript" period="3" />
-  	  	<ProgSkill lang="HTML/CSS" period="3" />
-  	  	<ProgSkill lang="Python" period="2" />
-  	  	<ProgSkill lang="C++" period="1" />
-        <ProgSkill lang="Ruby on Rails" period="1" />
+  	  	<h2 className="content-title">プログラミングレベル</h2>
+  	  	<ProgSkill key="0" lang="C" period="3" />
+  	  	<ProgSkill key="1" lang="Java" period="3" />
+  	  	<ProgSkill key="2" lang="JavaScript" period="3" />
+  	  	<ProgSkill key="3" lang="HTML/CSS" period="3" />
+  	  	<ProgSkill key="4" lang="Python" period="2" />
+  	  	<ProgSkill key="5" lang="C++" period="1" />
+        <ProgSkill key="6" lang="Ruby on Rails" period="1" />
   	  </div>
   	)
   }
@@ -45,35 +45,11 @@ class ProgSkill extends Component {
       items.push(<img src={Star} />)
     }
     return (
-      <div style={styles.prog}>
-        <h2 style={styles.item}>{this.props.lang}</h2>
-        <div style={styles.star}>
-          {items}
-        </div>
-        <h2 style={styles.item}>{this.props.period}年</h2>
+      <div className="prog">
+        <h2 className="skill-item">{this.props.lang}</h2>
+        <div className="star">{items}</div>
+        <h2 className="skill-item">{this.props.period}年</h2>
       </div>
     )
   }
-}
-
-const styles = {
-  h2: {
-  	color: '#fff',
-  	display: 'flex',
-  	justifyContent: 'center',
-    marginTop: 100,
-  },
-  prog: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-  },
-  star: {
-    justifyContent: 'space-around',
-  },
-  item: {
-    color: '#fff',
-    flex: 1,
-    marginLeft: '10%',
-  },
 }

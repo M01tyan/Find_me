@@ -1,0 +1,12 @@
+.arrow {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+
+  p {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+  }
+}

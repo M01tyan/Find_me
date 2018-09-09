@@ -20,7 +20,7 @@ export default class History extends Component {
   render() {
   	return (
   	  <div ref="history">
-        <h2 style={styles.h2}>これまでの経緯</h2>
+        <h2 className="content-title">これまでの経歴</h2>
         <HistoryItems text="1998年1月1日福岡県福岡市で誕生" />
         <HistoryItems text="3歳~10歳までピアノを習う" />
         <HistoryItems text="小学3年生~5年生まで英会話を習う" />
@@ -57,30 +57,10 @@ class HistoryItems extends Component {
   }
   render() {
     return (
-      <div style={styles.arrow} ref="history_item">
+      <div className="arrow" ref="history_item">
         <img src={Arrow} />
-        <p style={styles.p}>{this.props.text}</p>
+        <p>{this.props.text}</p>
       </div>
     )
-  }
-}
-
-const styles = {
-  h2: {
-    color: '#fff',
-    marginTop: 200,
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  arrow: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginLeft: '10%',
-  },
-  p: {
-    display: 'flex',
-    alignItems: 'center',
-    color: '#fff',
-    fontSize: 20,
   }
 }
