@@ -36,19 +36,18 @@ export default class Skill extends Component {
 
 class ProgSkill extends Component {
   render() {
-    const items = [];
-    let j;
-    for(j=0; j<this.props.period; j++){
-      items.push(<img src={StarGood} />)
+    const items = []
+    for(var j=0; j<this.props.period; j++){
+      items.push(<img src={StarGood} className="star-img" />)
     }
     for(let i=j; i<5; i++){
-      items.push(<img src={Star} />)
+      items.push(<img src={Star} className="star-img" />)
     }
     return (
       <div className="prog">
-        <h2 className="skill-item">{this.props.lang}</h2>
+        <h2 className="skill-lang">{this.props.lang}</h2>
         <div className="star">{items}</div>
-        <h2 className="skill-item">{this.props.period}年</h2>
+        <h2 className="skill-period">{this.props.period}年</h2>
       </div>
     )
   }
