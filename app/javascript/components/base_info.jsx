@@ -9,6 +9,8 @@ import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import sr from './ScrollReveal'
 import Icon from './images/icon.jpg'
+import Facebook from './images/facebook_logo.png'
+import Github from './images/github_logo.png'
 
 export default class BaseInfo extends Component {
 	componentDidMount() {
@@ -44,103 +46,60 @@ export default class BaseInfo extends Component {
 
   render() {
   	return (
-  		<Card style={this.state.changeCard} className="card">
-      	<div className="card-base">
-          <CardContent>
-            <Avatar src={Icon} className="icon" refs="logo"/>
-          </CardContent>
-          <CardContent>
-          	<div className="base-info">
-              <Typography color="textSecondary">
-              	{this.props.u_name}
-              </Typography>
-              <Typography color="textSecondary">
-                {this.props.d_name}学部
-              </Typography>
-              <div className="my-name">
-                <Typography variant="headline">
-                  {this.props.name}
+      <div className="card">
+    		<Card style={this.state.changeCard} className="base-info">
+        	<div className="card-base">
+            <CardContent>
+              <Avatar src={Icon} className="icon" refs="logo"/>
+            </CardContent>
+            <CardContent>
+            	<div className="base-info">
+                <Typography color="textSecondary">
+                	{this.props.u_name}
                 </Typography>
                 <Typography color="textSecondary">
-                  Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
+                  {this.props.d_name}学部
+                </Typography>
+                <div className="my-name">
+                  <Typography variant="headline">
+                    {this.props.name}
+                  </Typography>
+                  <Typography color="textSecondary">
+                    Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
+                  </Typography>
+                </div>
+                <br/>
+                <Typography color="textSecondary">
+                  Tel: 080-2725-8866
+                </Typography>
+                <Typography color="textSecondary">
+                  Email: kanta01m.tyan@gmail.com
                 </Typography>
               </div>
-              <br/>
-              <Typography color="textSecondary">
-                Tel: 080-2725-8866
-              </Typography>
-              <Typography color="textSecondary">
-                Email: kanta01m.tyan@gmail.com
-              </Typography>
-            </div>
-          </CardContent>
-        </div>
-        <CardActions className="detail-button">
-          <Button size="small" onClick={ () => this.handleExpandClick()}>{this.state.text}</Button>
-        </CardActions>
-        <CardContent style={this.state.style}>
-          <Typography paragraph className="detail">
+            </CardContent>
+          </div>
+          <CardActions className="detail-button">
+            <Button size="small" onClick={ () => this.handleExpandClick()}>{this.state.text}</Button>
+          </CardActions>
+          <CardContent style={this.state.style}>
             <p className="detail-item">性別:</p><p className="detail-item">{this.props.gender}</p>
-          </Typography>
-          <Typography paragraph style={styles.detail}>
             <p className="detail-item">生年月日:</p><p className="detail-item">{this.props.birthday}</p>
-          </Typography>
-          <Typography paragraph style={styles.detail}>
-          	<p className="detail-item">卒業年度:</p><p className="detail-item">{this.props.graduate}年</p>
-          </Typography>
-          <Typography paragraph style={styles.detail}>
+            <p className="detail-item">卒業年度:</p><p className="detail-item">{this.props.graduate}年</p>
             <p className="detail-item">出身地:</p><p className="detail-item">{this.props.birthplace}</p>
-          </Typography>
-          <Typography paragraph style={styles.detail}>
             <p className="detail-item">出身高校:</p><p className="detail-item">{this.props.highschool}</p>
-          </Typography>
-          <Typography paragraph style={styles.detail}>
             <p className="detail-item">資格:</p><p className="detail-item">{this.props.licenses}</p>
-          </Typography>
-          <Typography paragraph style={styles.detail}>
             <p className="detail-item">趣味:</p><p className="detail-item">{this.props.hobby}</p>
-          </Typography>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+        <div className="card-logo" ref="logo">
+          <a href="https://www.facebook.com/profile.php?viewas=100000686899395&privacy_source=timeline_gear_menu">
+            <img src={Facebook} className="logo-facebook" />
+          </a>
+          <a href="https://github.com/M01tyan">
+            <img src={Github} className="logo-github" />
+          </a>
+        </div>
+      </div>
   	)
   }
-}
-
-const styles = {
-	card: {
-    width: 500,
-		paddingRight: 0,
-		display: 'flex',
-		flexDirection: 'column',
-	},
-	cardBase: {
-		display: 'flex',
-		flexDirection: 'row',
-	},
-	icon: {
-		width: 170,
-		height: 170,
-		marginTop: 10,
-	},
-	baseInfo: {
-		marginTop: 10,
-	},
-	myName: {
-		marginLeft: 30,
-		marginTop: 20,
-	},
-	button: {
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-  detail: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  p: {
-    display: 'flex',
-    flex: 1,
-  },
 }

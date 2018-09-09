@@ -8,14 +8,40 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  
-  .skill-item {
+  .skill-lang {
+    color: #fff;
+    flex: 3;
+    margin-left: 5em;
+    justify-content: flex-start;
+  }
+  .skill-period {
     color: #fff;
     flex: 1;
-    margin-left: 10%;
+    margin-right: 5em;
+    justify-content: flex-end;
   }
-
+  @media screen and (max-width: 425px) {
+    .skill-lang {
+      margin-left: 1em;
+    }
+    .skill-period {
+      margin-right: 0;
+      justify-content: flex-end;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .skill-lang {
+      margin-left: 0;
+    }
+  }
   .star {
     justify-content: space-around;
+    flex: 4;
+  }
+}
+@media screen and (max-width: 425px) {
+  .star-img {
+    width: 30px;
+    height: 30px;
   }
 }

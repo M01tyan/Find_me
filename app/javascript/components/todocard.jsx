@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import sr from './ScrollReveal'
+import Facebook from './images/facebook_logo.png'
 
 export default class TodoCard extends Component {
   componentDidMount() {
@@ -22,7 +23,22 @@ export default class TodoCard extends Component {
 
   render() {
     return (
-      <div className="todo-card" ref="todocard">
+      <div ref="todocard">
+        <h2 className="content-title">これまでの制作物</h2>
+        <div className="todo-card">
+          <div><TodoCardItem image_src={Facebook} title="会津大学アプリケーション" /></div>
+          <div><TodoCardItem image_src={Facebook} title="OGCとのIoTプロジェクト" /></div>
+          <div><TodoCardItem image_src={Facebook} title="Fime me サイト" /></div>
+        </div>
+      </div>
+    )
+  }
+}
+
+class TodoCardItem extends Component {
+  render() {
+    return (
+      <div className="todo-card-item" ref="todocard">
         <a href="" className="todo-card-link" >
           <Card className="card">
             <CardContent className="item">
