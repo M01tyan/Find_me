@@ -17,19 +17,27 @@
           flex-direction: column;
           align-items: center;
           .image {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
           }
           .title {
             font-size: 20px;
             display: flex;
+          }
+          .sub-images {
+            display: flex;
+            flex-direction: row;
+            .sub-img {
+              width: 80px;
+              height: 90px;
+            }
           }
         }
       }
     }
   }
 }
-@media screen and (max-width: 425px) 
+@media screen and (max-width: 425px)
 {
   .todo-card {
     display: flex;

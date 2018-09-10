@@ -5,7 +5,16 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
 import sr from './ScrollReveal'
-import Facebook from './images/facebook_logo.png'
+import Aizulogo from './images/logo2g.jpg'
+import Monaca from './images/monaca.jpg'
+import Nifty from './images/mobile_backend.jpeg'
+import Onsen from './images/onsen_ui.png'
+import Html5 from './images/HTML5.png'
+import Js from './images/JavaScript-logo.png'
+import Ogc from './images/ogc_logo.png'
+import Pepper from './images/pepper.jpg'
+import Python from './images/python.jpg'
+import Mqtt from './images/mqttorg-glow.png'
 
 export default class TodoCard extends Component {
   componentDidMount() {
@@ -26,9 +35,50 @@ export default class TodoCard extends Component {
       <div ref="todocard">
         <h2 className="content-title">これまでの制作物</h2>
         <div className="todo-card">
-          <div><TodoCardItem image_src={Facebook} title="会津大学アプリケーション" /></div>
-          <div><TodoCardItem image_src={Facebook} title="OGCとのIoTプロジェクト" /></div>
-          <div><TodoCardItem image_src={Facebook} title="Fime me サイト" /></div>
+          <div className="todo-card-item" ref="todocard">
+            <a href="" className="todo-card-link" >
+              <Card className="card">
+                <CardContent className="item">
+                  <Typography>
+                    <img src={Aizulogo} className="image" />
+                  </Typography>
+                  <Typography className="title">
+                     会津大学アプリケーション
+                  </Typography>
+                  <div className="sub-images">
+                    <img src={Html5} width="90px" height="90px" />
+                    <img src={Monaca} width="90px" height="100px" />
+                    <img src={Js} width="90px" height="90px" />
+                  </div>
+                  <div className="sub-images">
+                    <img src={Onsen} width="70px" height="80px" />
+                    <img src={Nifty} width="170px" height="80px" />
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+          <div className="todo-card-item" ref="todocard">
+            <a href="" className="todo-card-link" >
+              <Card className="card">
+                <CardContent className="item">
+                  <Typography>
+                    <img src={Ogc} className="image" />
+                  </Typography>
+                  <Typography className="title">
+                     OGCとのIoTプロジェクト
+                  </Typography>
+                  <div className="sub-images">
+                    <img src={Pepper} width="120px" height="180px" />
+                    <div style={{flexDirection: 'column'}}>
+                      <img src={Python} width="80px" height="70px" />
+                      <img src={Mqtt} width="150px" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
         </div>
       </div>
     )
@@ -48,6 +98,15 @@ class TodoCardItem extends Component {
               <Typography className="title">
                  {this.props.title}
               </Typography>
+              <div className="sub-images">
+                <img src={Html5} width="90px" height="90px" />
+                <img src={Monaca} width="90px" height="100px" />
+                <img src={Js} width="90px" height="90px" />
+              </div>
+              <div className="sub-images">
+                <img src={Onsen} width="70px" height="80px" />
+                <img src={Nifty} width="170px" height="80px" />
+              </div>
             </CardContent>
           </Card>
         </a>
