@@ -15,6 +15,7 @@ import Ogc from './images/ogc_logo.png'
 import Pepper from './images/pepper.jpg'
 import Python from './images/python.jpg'
 import Mqtt from './images/mqttorg-glow.png'
+import Fiware from './images/Fiware.png'
 
 export default class TodoCard extends Component {
   componentDidMount() {
@@ -63,7 +64,7 @@ export default class TodoCard extends Component {
               <Card className="card">
                 <CardContent className="item">
                   <Typography>
-                    <img src={Ogc} className="image" />
+                    <img src={Ogc} className="image" style={{width: 180}}/>
                   </Typography>
                   <Typography className="title">
                      OGCとのIoTプロジェクト
@@ -71,8 +72,31 @@ export default class TodoCard extends Component {
                   <div className="sub-images">
                     <img src={Pepper} width="120px" height="180px" />
                     <div style={{flexDirection: 'column'}}>
-                      <img src={Python} width="80px" height="70px" />
+                      <img src={Python} width="90px" height="70px" />
                       <img src={Mqtt} width="150px" />
+                      <img src={Fiware} width="180px" style={{paddingLeft: 0}}/>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </a>
+          </div>
+          <div className="todo-card-item" ref="todocard">
+            <a href="" className="todo-card-link" >
+              <Card className="card">
+                <CardContent className="item">
+                  <Typography>
+                    <img src={Ogc} className="image" style={{width: 180}}/>
+                  </Typography>
+                  <Typography className="title">
+                     Find me サイト
+                  </Typography>
+                  <div className="sub-images">
+                    <img src={Pepper} width="120px" height="180px" />
+                    <div style={{flexDirection: 'column'}}>
+                      <img src={Python} width="90px" height="70px" />
+                      <img src={Mqtt} width="150px" />
+                      <img src={Fiware} width="180px" style={{paddingLeft: 0}}/>
                     </div>
                   </div>
                 </CardContent>
