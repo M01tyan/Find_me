@@ -4,6 +4,7 @@
     justify-content: center;
 	.base-info {
 	    width: 500px;
+	    height: 230px;
 		padding-right: 0;
 		display: flex;
 		flex-direction: column;
@@ -54,19 +55,45 @@
 	    }
 	}
 }
-@media screen and (max-width: 767px) {
-	.card {
-		flex-direction: column;
+@media screen and (max-width: 600px) {
+.card {
+	margin-left: 50px;
+	.base-info {
+		width: 270px;
+		height: 400px;
 		align-items: center;
-		.base-info {
-			width: 270px;
-			height: 800px;
-			.card-base {
-				flex-direction: column;
+		.card-base {
+			flex-direction: column;	
+			align-items: center;
+			.university {
+				margin-right: 80px;
+			}
+			.my-name {
+				margin-left: 0;
+			}
+			.access {
+				justify-content: flex-end;
 			}
 		}
-		.card-logo {
-			flex-direction: row;
+	}
+}
+}
+@media screen and (max-width: 375px) {
+.card {
+	flex-direction: column;		
+	.card-logo {
+		flex-direction: row;
+		margin-left: 180px;
+		height: 50px;
+		.logo-facebook {
+			margin-top: 23px;
 		}
 	}
+}
+}
+@media screen and (max-width: 320px) {
+.card {
+	margin-left: 20px;
+
+}
 }

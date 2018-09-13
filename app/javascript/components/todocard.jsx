@@ -44,7 +44,7 @@ export default class TodoCard extends Component {
         <div className="todo-card">
           <div className="todo-card-item" ref="todocard">
             <a href="" className="todo-card-link" >
-              <Card className="card">
+              <Card className="card-item">
                 <CardContent className="item">
                   <Typography>
                     <img src={Aizulogo} className="image" />
@@ -67,7 +67,7 @@ export default class TodoCard extends Component {
           </div>
           <div className="todo-card-item" ref="todocard">
             <a href="" className="todo-card-link" >
-              <Card className="card">
+              <Card className="card-item">
                 <CardContent className="item">
                   <Typography>
                     <img src={Ogc} className="image" style={{width: 180}}/>
@@ -89,7 +89,7 @@ export default class TodoCard extends Component {
           </div>
           <div className="todo-card-item" ref="todocard">
             <a href="" className="todo-card-link" >
-              <Card className="card">
+              <Card className="card-item">
                 <CardContent className="item">
                   <Typography>
                     <img src={Findme} className="image" style={{width: 180}} />
@@ -103,7 +103,7 @@ export default class TodoCard extends Component {
                   </div>
                   <div className="sub-images">
                     <img src={Webpacker} width="100px" height="90px" style={{marginTop: 5}} />
-                    <img src={Material} width="80px" height="80px" />
+                    <img src={Material} width="80px" height="100px" />
                     <img src={Git} width="70px" height="40px" style={{marginLeft: 5}} />
                   </div>
                 </CardContent>
