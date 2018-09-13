@@ -30,7 +30,7 @@
     margin-right: 5em;
     justify-content: flex-end;
   }
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 680px) {
     .skill-lang {
       margin-left: 1em;
     }
@@ -44,6 +44,7 @@
       margin-left: 0;
     }
   }
+
   .star {
     justify-content: space-around;
     flex: 4;
@@ -69,7 +70,7 @@
     }
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 500px) {
   .star-img {
     width: 30px;
     height: 30px;
