@@ -32,7 +32,7 @@ export default class BaseInfo extends Component {
         display: "none"
       },
       changeCard: {
-      	height: 250,
+      	height: 500,
       },
       state: false,
       text: "Show Detail",
@@ -47,19 +47,21 @@ export default class BaseInfo extends Component {
   render() {
   	return (
       <div className="card">
-    		<Card style={this.state.changeCard} className="base-info">
+    		<Card className="base-info">
         	<div className="card-base">
             <CardContent>
               <Avatar src={Icon} className="icon" refs="logo"/>
             </CardContent>
             <CardContent>
             	<div className="base-info">
-                <Typography color="textSecondary">
-                	{this.props.u_name}
-                </Typography>
-                <Typography color="textSecondary">
-                  {this.props.d_name}学部
-                </Typography>
+                <div className="university">
+                  <Typography color="textSecondary">
+                  	{this.props.u_name}
+                  </Typography>
+                  <Typography color="textSecondary">
+                    {this.props.d_name}学部
+                  </Typography>
+                </div>
                 <div className="my-name">
                   <Typography variant="headline">
                     {this.props.name}
@@ -69,15 +71,18 @@ export default class BaseInfo extends Component {
                   </Typography>
                 </div>
                 <br/>
-                <Typography color="textSecondary">
-                  Tel: 080-2725-8866
-                </Typography>
-                <Typography color="textSecondary">
-                  Email: kanta01m.tyan@gmail.com
-                </Typography>
+                <div className="access">
+                  <Typography color="textSecondary">
+                    Tel: 080-2725-8866
+                  </Typography>
+                  <Typography color="textSecondary">
+                    Email: kanta01m.tyan@gmail.com
+                  </Typography>
+                </div>
               </div>
             </CardContent>
           </div>
+          {/*
           <CardActions className="detail-button">
             <Button size="small" onClick={ () => this.handleExpandClick()}>{this.state.text}</Button>
           </CardActions>
@@ -90,6 +95,7 @@ export default class BaseInfo extends Component {
             <p className="detail-item">資格:</p><p className="detail-item">{this.props.licenses}</p>
             <p className="detail-item">趣味:</p><p className="detail-item">{this.props.hobby}</p>
           </CardContent>
+        */}
         </Card>
         <div className="card-logo" ref="logo">
           <a href="https://www.facebook.com/profile.php?viewas=100000686899395&privacy_source=timeline_gear_menu">
