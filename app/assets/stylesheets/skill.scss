@@ -4,6 +4,16 @@
   justify-content: center;
   margin-top: 100px;
 }
+@media screen and (min-width: 769px){
+  .content-title {
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 1441px) {
+  .content-title {
+    font-size: 60px;
+  }
+}
 .prog {
   display: flex;
   flex-direction: row;
@@ -44,6 +54,18 @@
     }
     .skill-period {
       font-size: 30px;
+    }
+  }
+  @media screen and (min-width: 1441px) {
+    .skill-lang {
+      font-size: 50px;
+    }
+    .skill-period {
+      font-size: 50px;
+    }
+    .star-img {
+      width: 80px;
+      height: 80px;
     }
   }
 }

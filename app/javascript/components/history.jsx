@@ -58,7 +58,7 @@ class HistoryItems extends Component {
   render() {
     return (
       <div className="arrow" ref="history_item">
-        <img src={Arrow} />
+        <img src={Arrow} className="arrow-img" />
         <p>{this.props.text}</p>
       </div>
     )

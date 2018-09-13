@@ -27,7 +27,13 @@
         line-height: 30px;
       }
     }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 1025px) and (max-width: 1440px){
+      .self-pr {
+        font-size: 20px;
+        line-height: 35px;
+      }
+    }
+    @media screen and (min-width: 1441px) {
       .self-pr {
         font-size: 40px;
         line-height: 45px;

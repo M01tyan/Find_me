@@ -8,16 +8,23 @@
     color: #fff;
     font-size: 20px;
     line-height: 25px;
+    margin-right: 10%;
   }
 }
 @media screen and (max-width: 425px) {
   .arrow {
     margin-left: 10px;
+    p {
+      margin-right: 10px;
+    }
   }
 }
 @media screen and (max-width: 376px) {
   .arrow {
     margin-left: 0;
+    p {
+      margin-right: 0;
+    }
   }
 }
 @media screen and (min-width: 769px) {
@@ -25,6 +32,17 @@
     p {
       font-size: 30px;
       line-height: 35px;
+    }
+  }
+}
+@media screen and (min-width: 1441px) {
+  .arrow {
+    .arrow-img {
+      width: 200px;
+    }
+    p {
+      font-size: 80px;
+      line-height: 85px;
     }
   }
 }

@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import sr from './ScrollReveal'
-import Career1 from './images/career1.png'
-import Plus from './images/plus.png'
-import Career2 from './images/career2.png'
-import Arrow from './images/arrow_right.png'
-import Career3 from './images/career3.png'
+import CareerImg from './images/career_row.png'
 
 export default class Career extends Component {
   componentDidMount() {
@@ -34,13 +30,9 @@ export default class Career extends Component {
   render() {
   	return (
   	  <div ref="career">
-        <h2 style={styles.h2}>将来のキャリア像</h2>
-        <div style={styles.img} ref="img">
-          <img src={Career1} />
-          <img src={Plus} width="42" height="42" style={styles.absolute} />
-          <img src={Career2} />
-          <img src={Arrow} width="42" height="42" style={styles.absolute_arrow} />
-          <img src={Career3} />
+        <h2 className="content-title">将来のキャリア像</h2>
+        <div className="career" ref="img">
+          <img src={CareerImg} className="career-img" />
         </div>
   	  </div>
   	)
