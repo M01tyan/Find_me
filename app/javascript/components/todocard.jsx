@@ -16,6 +16,12 @@ import Pepper from './images/pepper.jpg'
 import Python from './images/python.jpg'
 import Mqtt from './images/mqttorg-glow.png'
 import Fiware from './images/Fiware.png'
+import Findme from './images/Find_me_logo.png'
+import ReactLogo from './images/react.png'
+import Rails from './images/rails.svg'
+import Git from './images/git.png'
+import Material from './images/material-ui.png'
+import Webpacker from './images/webpack.png'
 
 export default class TodoCard extends Component {
   componentDidMount() {
@@ -74,7 +80,7 @@ export default class TodoCard extends Component {
                     <div style={{flexDirection: 'column'}}>
                       <img src={Python} width="90px" height="70px" />
                       <img src={Mqtt} width="150px" />
-                      <img src={Fiware} width="180px" style={{paddingLeft: 0}}/>
+                      <img src={Fiware} width="180px" />
                     </div>
                   </div>
                 </CardContent>
@@ -86,18 +92,19 @@ export default class TodoCard extends Component {
               <Card className="card">
                 <CardContent className="item">
                   <Typography>
-                    <img src={Ogc} className="image" style={{width: 180}}/>
+                    <img src={Findme} className="image" style={{width: 180}} />
                   </Typography>
                   <Typography className="title">
                      Find me サイト
                   </Typography>
                   <div className="sub-images">
-                    <img src={Pepper} width="120px" height="180px" />
-                    <div style={{flexDirection: 'column'}}>
-                      <img src={Python} width="90px" height="70px" />
-                      <img src={Mqtt} width="150px" />
-                      <img src={Fiware} width="180px" style={{paddingLeft: 0}}/>
-                    </div>
+                    <img src={Rails} width="80px" height="90px" />
+                    <img src={ReactLogo} width="150px" height="80px" />
+                  </div>
+                  <div className="sub-images">
+                    <img src={Webpacker} width="100px" height="90px" style={{marginTop: 5}} />
+                    <img src={Material} width="80px" height="80px" />
+                    <img src={Git} width="70px" height="40px" style={{marginLeft: 5}} />
                   </div>
                 </CardContent>
               </Card>

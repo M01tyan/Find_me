@@ -8,9 +8,31 @@
       flex: 3;
       flex-wrap: wrap;
       justify-content: center;
-      font-size: 15;
+      font-size: 18px;
+      line-height: 20px;
     }
-
+    @media screen and (max-width: 425px) {
+      .self-pr {
+        flex: 10;
+      }
+    }
+    @media screen and (max-width: 768px) and (min-width: 426px) {
+      .self-pr {
+        flex: 5;
+      }
+    }
+    @media screen and (min-width: 769px) {
+      .self-pr {
+        font-size: 25px;
+        line-height: 30px;
+      }
+    }
+    @media screen and (min-width: 1025px) {
+      .self-pr {
+        font-size: 40px;
+        line-height: 45px;
+      }
+    }
     .blank {
       display: flex;
       flex: 1;
