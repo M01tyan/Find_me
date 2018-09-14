@@ -73,10 +73,7 @@ export default class BaseInfo extends Component {
                 <br/>
                 <div className="access">
                   <Typography color="textSecondary">
-                    Tel: 080-2725-8866
-                  </Typography>
-                  <Typography color="textSecondary">
-                    Email: kanta01m.tyan@gmail.com
+                    Email: s1240236@u-aizu.ac.jp
                   </Typography>
                 </div>
               </div>
@@ -98,7 +95,7 @@ export default class BaseInfo extends Component {
         */}
         </Card>
         <div className="card-logo" ref="logo">
-          <a href="https://www.facebook.com/profile.php?viewas=100000686899395&privacy_source=timeline_gear_menu">
+          <a href="https://www.facebook.com/M01tyan">
             <img src={Facebook} className="logo-facebook" />
           </a>
           <a href="https://github.com/M01tyan">
