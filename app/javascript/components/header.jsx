@@ -7,9 +7,9 @@ export default class Header extends Component {
 			<div className="header">
 				<a href="/"><img src={Findme} className="header-logo" /></a>
 				<div className="header-links">
-					<a href="" className="link">Home</a>
+					<a href="/" className="link">Home</a>
 					<a href="" className="link">訪問企業一覧</a>
-					<a href="" className="link">このサイトについて</a>
+					<a href="/about/show" className="link">このサイトについて</a>
 				</div>
 			</div>
 		)

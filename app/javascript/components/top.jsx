@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import ToDoCard from './todocard'
 import BaseInfo from './base_info'
 import Skill from './skill'

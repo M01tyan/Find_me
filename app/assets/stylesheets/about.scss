@@ -1,0 +1,95 @@
+// Place all the styles related to the about controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.about-top {
+	margin-bottom: 200px;
+	.catch-copy {
+		color: #fff;
+		font-size: 50px;
+		line-height: 55px;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+	.about-logo {
+		display: flex;
+		justify-content: center;
+	}
+}
+.appeal {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	.catch-copy {
+		font-size: 40px;
+		line-height: 45px;
+	}
+	.catch-copy-about {
+		margin-top: 0;
+		font-size: 20px;
+		line-height: 25px;
+		color: #808080;
+	}
+}
+.appeal-items {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 150px;
+	.appeal-item {
+		flex-direction: column;
+		margin: 0 10px;
+		padding-top: 30px;
+		.appeal-item-title {
+			white-space: pre-wrap;
+		}
+	}
+}
+.concept {
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	.concept-title {
+		font-size: 40px;
+		line-height: 45px;
+	}
+	.concept-about {
+		margin-top: 0;
+		font-size: 20px;
+		line-height: 25px;
+		color: #fff;
+	}
+	.concept-image {
+		width: 800px;
+		margin: 0 auto;
+		margin-top: 100px;
+		margin-bottom: 150px;
+	}
+}
+.template {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	.template-title {
+		font-size: 40px;
+		line-height: 45px;
+	}
+	.template-about {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: 20px;
+		line-height: 25px;
+	}
+	.template-image {
+		width: 800px;
+		margin: 0 auto;
+		margin-top: 100px;
+		margin-bottom: 150px;
+	}
+}
