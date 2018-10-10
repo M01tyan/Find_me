@@ -36,7 +36,7 @@ export default class About extends Component {
           <h1 className="catch-copy">自分を最大限に表現する場を提供したい！</h1>
           <p className="catch-copy-about">企業の方とお会いしてもなかなか自分を表現することができない、<br/>もしくは地方学生がなかなか会うことのできない人に短い時間で<br/>
   最大限にアピールしたい方に向けた自己紹介サイトです。</p>
-          <div className="appeal-items" ref="about">
+          <div className="appeal-items">
             <AppealItem title="&nbsp;<br/>これまでの制作物" image={AppealImage1} />
             <AppealItem title="プログラミング<br/>レベル" image={AppealImage2} />
             <AppealItem title="&nbsp;<br/>これまでの経歴" image={AppealImage3} />
@@ -66,6 +66,17 @@ class AppealItem extends Component {
 }
 
 class AboutTemplate extends Component {
+  componentDidMount() {
+    const config = {
+      origin: 'left',
+      duration: 1000,
+      delay: 150,
+      distance: '50px',
+      scale: 1,
+      easing: 'ease',
+    }
+    sr.reveal(this.refs.template, config)
+  }
   render() {
     let white_background = {
       backgroundColor: "#fff"
@@ -86,7 +97,7 @@ class AboutTemplate extends Component {
             return (<p className="template-about" style={white_fontColor}>{line}</p>);
         });
     return (
-      <div className="template" style={white_background}>
+      <div className="template" style={white_background} ref="template">
         <h1 className="template-title">
           {this.props.title}
         </h1>
