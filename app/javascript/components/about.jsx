@@ -29,18 +29,22 @@ export default class About extends Component {
   	    <div className="about-top" ref="about">
     		  <h1 className="catch-copy">学生のための<br/>Web名刺</h1>
     		  <div className="about-logo">
-    		    <img src={Icon} width="350" height="200" />
+    		    <img src={Icon} className="about-card" />
     		  </div>
     		</div>
         <div className="appeal" ref="about">
           <h1 className="catch-copy">自分を最大限に表現する場を提供したい！</h1>
-          <p className="catch-copy-about">企業の方とお会いしてもなかなか自分を表現することができない、<br/>もしくは地方学生がなかなか会うことのできない人に短い時間で<br/>
-  最大限にアピールしたい方に向けた自己紹介サイトです。</p>
+          <p className="catch-copy-about">
+          企業の方とお会いしてもなかなか自分を表現することができない、もしくは地方学生がなかなか会うことのできない人に短い時間で最大限にアピールしたい方に向けた自己紹介サイトです。</p>
           <div className="appeal-items">
-            <AppealItem title="&nbsp;<br/>これまでの制作物" image={AppealImage1} />
-            <AppealItem title="プログラミング<br/>レベル" image={AppealImage2} />
-            <AppealItem title="&nbsp;<br/>これまでの経歴" image={AppealImage3} />
-            <AppealItem title="&nbsp;<br/>自己PR" image={AppealImage4} />
+            <div className="appeal-items-flex">
+              <AppealItem title="&nbsp;<br/>これまでの制作物" image={AppealImage1} />
+              <AppealItem title="プログラミング<br/>レベル" image={AppealImage2} />
+            </div>
+            <div className="appeal-items-flex">
+              <AppealItem title="&nbsp;<br/>これまでの経歴" image={AppealImage3} />
+              <AppealItem title="&nbsp;<br/>自己PR" image={AppealImage4} />
+            </div>
           </div>
         </div>
         <AboutTemplate title="サイト利用のコンセプト" about="企業の方とお会いしてもなかなか自分を表現することができない、<br/>もしくは地方学生がなかなか会うことのできない人に短い時間で<br/>最大限にアピールしたい方に向けた自己紹介サイトです。" image={Concept} color="red" />

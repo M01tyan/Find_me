@@ -14,6 +14,15 @@
 	.about-logo {
 		display: flex;
 		justify-content: center;
+		.about-card {
+			width: 350px;
+			height: 200px;
+		}
+		@media screen and (max-width: 359px) {
+			.about-card {
+				width: 310px;
+			}
+		}
 	}
 }
 .appeal {
@@ -26,49 +35,45 @@
 		font-size: 40px;
 		line-height: 45px;
 	}
+	@media screen and (max-width: 761px) {
+		.catch-copy {
+			font-size: 30px;
+			line-height: 35px;
+		}
+	}
 	.catch-copy-about {
-		margin-top: 0;
+		margin: 0 29vw;
 		font-size: 20px;
 		line-height: 25px;
 		color: #808080;
 	}
-}
-.appeal-items {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-top: 50px;
-	margin-bottom: 150px;
-	.appeal-item {
-		flex-direction: column;
-		margin: 0 10px;
-		padding-top: 30px;
-		.appeal-item-title {
-			white-space: pre-wrap;
+	@media screen and (max-width: 1024px) and (min-width: 769px){
+		.catch-copy-about {
+			margin: 0 20vw;
 		}
 	}
-}
-.concept {
-	color: #fff;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	.concept-title {
-		font-size: 40px;
-		line-height: 45px;
+	@media screen and (max-width: 768px) {
+		.catch-copy-about {
+			margin: 0 5vw;
+		}
 	}
-	.concept-about {
-		margin-top: 0;
-		font-size: 20px;
-		line-height: 25px;
-		color: #fff;
-	}
-	.concept-image {
-		width: 800px;
-		margin: 0 auto;
-		margin-top: 100px;
+	.appeal-items {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 50px;
 		margin-bottom: 150px;
+		.appeal-item {
+			flex-direction: column;
+			margin: 0 10px;
+			padding-top: 30px;
+		@media screen and (max-width: 887px) {
+			flex-direction: row;
+		}
+			.appeal-item-title {
+				white-space: pre-wrap;
+			}
+		}
 	}
 }
 .template {
