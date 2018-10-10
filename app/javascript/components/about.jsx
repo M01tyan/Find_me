@@ -10,6 +10,9 @@ import AppealImage4 from './images/about_appeal4.png'
 import Concept from './images/about_concept.png'
 import Develop from './images/about_develop.png'
 import Brows from './images/about_brows.png'
+import DevelopMobile from './images/develop_mobile.png'
+import ConceptMobile from './images/concept_mobile.png'
+import BrowsMobile from './images/brows_mobile.png'
 
 export default class About extends Component {
   componentDidMount() {
@@ -47,9 +50,9 @@ export default class About extends Component {
             </div>
           </div>
         </div>
-        <AboutTemplate title="サイト利用のコンセプト" about="企業の方とお会いしてもなかなか自分を表現することができない、<br/>もしくは地方学生がなかなか会うことのできない人に短い時間で<br/>最大限にアピールしたい方に向けた自己紹介サイトです。" image={Concept} color="red" />
-        <AboutTemplate title="開発環境" about="Ruby on RailsでのWebアプリケーション<br/>サーバーサイドはRuby on Rails<br/>フロントエンドにはReact.jsを使用<br/>サーバーはHeroku、DBはPostgreSQL<br/>アクセス解析にはGoogle Analyticsを使用" image={Develop} color="white" />
-        <AboutTemplate title="対応ブラウザ" about="Google Chrome バージョン69.0<br/>Firefox バージョン62.0<br/>Safari バージョン12.0<br/>Microsoft Edge バージョン42.1" image={Brows} color="red" />
+        <AboutTemplate title="サイト利用のコンセプト" about="企業の方とお会いしてもなかなか自分を表現することができない、もしくは地方学生がなかなか会うことのできない人に短い時間で最大限にアピールしたい方に向けた自己紹介サイトです。" image_pc={Concept} image_sp={ConceptMobile} color="red" />
+        <AboutTemplate title="開発環境" about="Ruby on RailsでのWebアプリケーション<br/>サーバーサイドはRuby on Rails<br/>フロントエンドにはReact.jsを使用<br/>サーバーはHeroku、DBはPostgreSQL<br/>アクセス解析にはGoogle Analytics使用" image_pc={Develop} image_sp={DevelopMobile} color="white" />
+        <AboutTemplate title="対応ブラウザ" about="Google Chrome バージョン69.0<br/>Firefox バージョン62.0<br/>Safari バージョン12.0<br/>Microsoft Edge バージョン42.1" image_pc={Brows} image_sp={BrowsMobile} color="red" />
   	  </div>
   	)
   }
@@ -58,12 +61,12 @@ export default class About extends Component {
 class AppealItem extends Component {
   render() {
   var lines = this.props.title.split("<br/>").map(function(line) {
-            return (<h1>{line}</h1>);
+            return (<h1 className="appeal-item-title">{line}</h1>);
         });
     return (
       <div className="appeal-item">
         {lines}
-        <img src={this.props.image} width="200" height="300" />
+        <img src={this.props.image} className="appeal-item-image" />
       </div>
     )
   }
@@ -106,7 +109,8 @@ class AboutTemplate extends Component {
           {this.props.title}
         </h1>
         {lines}
-        <img src={this.props.image} className="template-image"/>
+        <img src={this.props.image_pc} className="template-image-pc"/>
+        <img src={this.props.image_sp} className="template-image-sp" />
       </div>
     )
   }

@@ -8,27 +8,51 @@
 	position: fixed;
 	z-index: 1;
 	opacity: 0.98;
+	.header-button {
+		display: none;
+	}
 	.header-logo {
 		width: 170px;
 		height: 30px;
 		margin: 5px 5px;
-
 	}
 	.header-links {
 		display: flex;
 		flex-direction: row;
+		.link {
+			margin-top: 15px;
+			margin-right: 10px;
+			color: #dc143c;
+		}
 	}
-	.link {
-		margin-top: 15px;
-		margin-right: 10px;
-		color: #dc143c;
+	.header-blank {
+		display: none;
 	}
 }
 @media screen and (max-width: 500px){
 .header {
-	justify-content: center;
+	justify-content: space-between;
+	.header-button {
+		display: block;
+		.link {
+			padding: 15px 10px;
+			color: #dc143c;
+		}
+	}
+	.header-logo {
+	}
 	.header-links {
 		display: none;
 	}
+	.header-blank {
+		display: block;
+		padding: 0 32px;
+	}
+}
+a {
+	color: #dc143c;
+}
+a:visited {
+	color: #dc143c;
 }
 }
