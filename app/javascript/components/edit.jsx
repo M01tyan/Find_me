@@ -24,7 +24,7 @@ export default class Top extends Component {
     this.state = {
       name: this.props.name,
       furigane: '',
-      u_name: this.props.u_name, 
+      u_name: this.props.u_name,
       d_name: this.props.d_name,
       gender: this.props.gender,
       birthday: this.props.birthday,
