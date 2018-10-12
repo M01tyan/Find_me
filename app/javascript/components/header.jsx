@@ -33,6 +33,7 @@ export default class Header extends Component {
 	          >
 							<div>
 								<List><a href="/" className="link">Home</a></List>
+								<List><a href="/top/edit" className="link">編集</a></List>
 								<List><a href="/about/show" className="link">このサイトについて</a></List>
 				        <Divider />
 							</div>
@@ -42,6 +43,7 @@ export default class Header extends Component {
 				<a href="/"><img src={Findme} className="header-logo" /></a>
 				<div className="header-links">
 					<a href="/" className="link">Home</a>
+					<a href="/top/edit" className="link">編集</a>
 					<a href="/about/show" className="link">このサイトについて</a>
 				</div>
 				<div className="header-blank">&nbsp;</div>

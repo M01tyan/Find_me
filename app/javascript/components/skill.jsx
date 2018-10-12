@@ -22,13 +22,13 @@ export default class Skill extends Component {
   	return (
   	  <div ref="skill">
   	  	<h2 className="content-title">プログラミングレベル</h2>
-  	  	<ProgSkill key="0" lang="C" period="3" />
-  	  	<ProgSkill key="1" lang="Java" period="3" />
-  	  	<ProgSkill key="2" lang="JavaScript" period="3" />
-  	  	<ProgSkill key="3" lang="HTML/CSS" period="3" />
-  	  	<ProgSkill key="4" lang="Python" period="2" />
-  	  	<ProgSkill key="5" lang="C++" period="1" />
-        <ProgSkill key="6" lang="Ruby on Rails" period="1" />
+  	  	<ProgSkill key="C" lang="C" period="3" />
+  	  	<ProgSkill key="Java" lang="Java" period="3" />
+  	  	<ProgSkill key="JavaScript" lang="JavaScript" period="3" />
+  	  	<ProgSkill key="HTML/CSS" lang="HTML/CSS" period="3" />
+  	  	<ProgSkill key="Python" lang="Python" period="2" />
+  	  	<ProgSkill key="C++" lang="C++" period="1" />
+        <ProgSkill key="Ruby on Rails" lang="Ruby on Rails" period="1" />
   	  </div>
   	)
   }

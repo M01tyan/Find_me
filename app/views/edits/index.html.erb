@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Edits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Phonetic</th>
+      <th>Department</th>
+      <th>Subject</th>
+      <th>Email</th>
+      <th>Image</th>
+      <th>Facebook</th>
+      <th>Github</th>
+      <th>Twitter</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @edits.each do |edit| %>
+      <tr>
+        <td><%= edit.user_name %></td>
+        <td><%= edit.phonetic %></td>
+        <td><%= edit.department %></td>
+        <td><%= edit.subject %></td>
+        <td><%= edit.email %></td>
+        <td><%= edit.image %></td>
+        <td><%= edit.facebook %></td>
+        <td><%= edit.github %></td>
+        <td><%= edit.twitter %></td>
+        <td><%= link_to 'Show', edit %></td>
+        <td><%= link_to 'Edit', edit_edit_path(edit) %></td>
+        <td><%= link_to 'Destroy', edit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Edit', new_edit_path %>

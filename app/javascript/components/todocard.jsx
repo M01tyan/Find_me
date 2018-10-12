@@ -265,7 +265,7 @@ class SampleCard extends Component {
             <GridList cols={1.0} className="gridList">
               {tileData.map(tile => (
                 <GridListTile key={tile.img}>
-                  <img src={tile.img} alt={tile.title} width="400" height="180"/>
+                  <img src={tile.img} alt={tile.title} />
                 </GridListTile>
               ))}
             </GridList>

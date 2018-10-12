@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_113450) do
+ActiveRecord::Schema.define(version: 2018_10_12_042044) do
 
-  create_table "tests", force: :cascade do |t|
-    t.string "index"
+  create_table "edits", force: :cascade do |t|
+    t.string "user_name"
+    t.string "phonetic"
+    t.string "department"
+    t.string "subject"
+    t.string "email"
+    t.string "image"
+    t.string "facebook"
+    t.string "github"
+    t.string "twitter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
