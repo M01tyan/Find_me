@@ -24,15 +24,16 @@ class EditsController < ApplicationController
   # POST /edits
   # POST /edits.json
   def create
-    @edit = Edit.new(edit_params)
+    @top = Top.new(edit_params)
 
     respond_to do |format|
-      if @edit.save
-        format.html { redirect_to @edit, notice: 'Edit was successfully created.' }
-        format.json { render :show, status: :created, location: @edit }
+      if @top.save
+        format.html { redirect_to @top, notice: 'Edit was successfully created.' }
+        format;js 
+        format.json { render json: @top }
       else
         format.html { render :new }
-        format.json { render json: @edit.errors, status: :unprocessable_entity }
+        format.json { render json: @top.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -69,6 +70,6 @@ class EditsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def edit_params
-      params.require(:edit).permit(:user_name, :phonetic, :department, :subject, :email, :image, :facebook, :github, :twitter)
+      params.require(:top).permit(:name)
     end
 end

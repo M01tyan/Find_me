@@ -1,6 +1,1 @@
-<%= form_for(@top, url: top_update_path(@top)) do |form| %>
-  <%= react_component("edit", name: :name, u_name: :u_name, d_name: :d_name, gender: :gender, birthday: :birthday, graduate: :graduate, birthplace: :birthplace, highschool: :highschool, licenses: :licenses, hobby: :hobby) %>
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+<%= react_component("edit", name: @top.name) %>

@@ -1,5 +1,7 @@
 <h1>New Edit</h1>
 
-<%= render 'form', edit: @edit %>
+<%= form_with(model: @edit, local: true) do |form| %>
+  <%= react_component('Edit', edit: @edit) %>
+<% end %>
 
 <%= link_to 'Back', edits_path %>
