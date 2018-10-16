@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bases, only: [:index, :create, :update, :show, :destory], format: 'json'
   resources :messages, only: [:index, :create, :update, :show, :destroy], format: 'json'
   get 'sample/index'
   get 'sample/show'

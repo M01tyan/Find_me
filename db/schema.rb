@@ -10,7 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_15_055521) do
+ActiveRecord::Schema.define(version: 2018_10_16_145333) do
+
+  create_table "api_bases", force: :cascade do |t|
+    t.string "name"
+    t.string "furigana"
+    t.string "university"
+    t.string "department"
+    t.string "subject"
+    t.integer "graduate_yaer"
+    t.string "email"
+    t.string "tel"
+    t.string "github"
+    t.string "facebook"
+    t.string "twitter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "api_v1_bases", force: :cascade do |t|
+    t.string "name"
+    t.string "furigana"
+    t.string "university"
+    t.string "department"
+    t.string "subject"
+    t.integer "graduate_yaer"
+    t.string "email"
+    t.string "tel"
+    t.string "github"
+    t.string "facebook"
+    t.string "twitter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bases", force: :cascade do |t|
+    t.string "name"
+    t.string "furigana"
+    t.string "university"
+    t.string "department"
+    t.string "subject"
+    t.integer "graduate_year"
+    t.string "email"
+    t.string "tel"
+    t.string "github"
+    t.string "facebook"
+    t.string "twitter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "edits", force: :cascade do |t|
     t.string "user_name"

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import InputAdornment from '@material-ui/core/InputAdornment'
+import $ from 'jquery'
 
 const ranges = [
   {
@@ -22,16 +23,17 @@ export default class Edit extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: this.props.name,
-      /*phonetic: this.props.edit.phonetic,
-      department: this.props.edit.department,
-      subject: this.props.edit.subject,
-      email: this.props.edit.email,
-      image: this.props.edit.image,
-      facebook: this.props.edit.facebook,
-      github: this.props.edit.github,
-      twitter: this.props.edit.twitter,
-      */
+      name: '',
+      furigana: '',
+      university: '',
+      department: '',
+      subject: '',
+      graduate_year: '',
+      email: '',
+      tel: '',
+      github: '',
+      facebook: '',
+      twitter: '',
     };
   }
   handleChange = name => event => {
@@ -40,25 +42,41 @@ export default class Edit extends Component {
     });
   };
   
-  handleMessageSubmit = () => {
-    $.ajax({
-      type: 'PATCH', // HTTPのメソッド
-      url: `/tops/1`, // リクエスト先のURL
-      dataType: 'json', // リクエストの種類
-      contentType: 'application/json', // レスポンスの種類
-      data: JSON.stringify({
-        name: this.state.name
-      }), // 実際に送信するデータ
-      beforeSend: function(xhr) {
-        xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
-      }
-    }).then((response) => {
-      const name = response
-      this.setState({
-        name
-      })
-    })
+  handleSubmit = event => {
+    //event.preventDefalut();
+    console.log("form ok")
+    this.handleMessageSubmit({name: this.state.name, furigana: this.state.furigana, university: this.state.university, department: this.state.department, subject: this.state.subject, graduate_year: this.state.graduate_year, email: this.state.email, tel: this.state.tel, github: this.state.github, facebook: this.state.facebook, twitter: this.state.twitter})
+    console.log("form success")
   }
+  handleMessageSubmit(message) {
+    console.log(message)
+    $.ajax({
+        url: "/bases/1",
+        dataType: 'json',
+        type: 'PATCH',
+        data: message,
+        success: function(message) {
+          window.location.href = '/'
+        }.bind(this),
+        error: function(_xhr, status, err) {
+          console.error(this.props.url, status, err.toString())
+        }.bind(this)
+      })
+  }
+  componentDidMount() {
+      $.ajax({
+        url: "/bases/1",
+        dataType: 'json',
+        cache: false,
+        success: function(message) {
+          this.setState({ name: message.name, furigana: message.furigana, university: message.university, department: message.department, subject: message.subject, graduate_year: message.graduate_year, email: message.email, tel: message.tel, github: message.github, facebook: message.facebook, twitter: message.twitter })
+          console.log("success")
+        }.bind(this),
+        error: function(_xhr, status, err) {
+          console.error(this.props.url, status, err.toString())
+        }.bind(this)
+      })
+    }
   
   render() {
     return (
@@ -66,9 +84,11 @@ export default class Edit extends Component {
         <h1 className="edit-title">編集フォーム</h1>
         <form className="edit" noValidate autoComplete="off" onSubmit={this.handleMessageSubmit}>
           <TextField
-            id="standard-require"
+            required
+            id="standard-required"
             label="Name"
             className="text-field"
+            type="search"
             value={this.state.name}
             onChange={this.handleChange('name')}
             margin="normal"
@@ -78,15 +98,18 @@ export default class Edit extends Component {
             id="standard-normal"
             label="Furigana(ふりがな)"
             className="text-field"
-            value={this.state.phonetic}
-            onChange={this.handleChange('')}
+            type="search"
+            value={this.state.furigana}
+            onChange={this.handleChange('furigana')}
             margin="normal"
           />
           <TextField
-            id="standard-require"
+            required
+            id="standard-required"
             label="University"
-            defaultValue={this.state.department}
-            onChange={this.handleChange('u_name')}
+            type="search"
+            value={this.state.university}
+            onChange={this.handleChange('university')}
             className="text-field"
             margin="normal"
           />
@@ -94,20 +117,33 @@ export default class Edit extends Component {
             required
             id="standard-required"
             label="Department(学部)"
-            defaultValue={this.state.subject}
-            onChange={this.handleChange('d_name')}
+            type="search"
+            value={this.state.department}
+            onChange={this.handleChange('department')}
             className="text-field"
             margin="normal"
           />
           <TextField
             required
-            id="standard-normal"
-            label="Subject(学科)"
-            defaultValue={this.state.email}
-            onChange={this.handleChange('d_name')}
+            id="standard-required"
+            label="subject(学科)"
+            type="search"
+            value={this.state.subject}
+            onChange={this.handleChange('subject')}
             className="text-field"
             margin="normal"
           />
+          <TextField
+            required
+            id="standard-required"
+            label="Graduate Year(卒業年度)"
+            type="search"
+            value={this.state.graduate_year}
+            onChange={this.handleChange('graduate_year')}
+            className="text-field"
+            margin="normal"
+          />
+          {/*
           <TextField
             select
             className="text-field"
@@ -122,43 +158,66 @@ export default class Edit extends Component {
               </MenuItem>
             ))}
           </TextField>
+        */}
           <TextField
             id="standard-search"
-            label="E-mail"
+            label="Email"
             type="search"
+            value={this.state.email}
+            onChange={this.handleChange('email')}
             className="text-field"
             margin="normal"
           />
           <TextField
             id="standard-dense"
-            label="Dense"
+            label="Telephone"
+            type="search"
+            value={this.state.tel}
+            onChange={this.handleChange('tel')}
             className="text-field dense"
             margin="dense"
           />
           <TextField
-            id="standard-multiline-flexible"
-            label="Multiline"
-            multiline
-            rowsMax="4"
+            id="standard-full-width"
+            label="Facebook Link"
+            type="search"
+            style={{ margin: 8 }}
+            placeholder="https://www.facebook.com/"
+            fullWidth
             value={this.state.facebook}
-            onChange={this.handleChange('multiline')}
-            className="text-field"
+            onChange={this.handleChange('facebook')}
             margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <TextField
-            id="standard-helperText"
-            label="Helper text"
-            defaultValue="Default Value"
-            className="text-field"
-            helperText="Some important text"
+            id="standard-full-width"
+            label="Github Link"
+            type="search"
+            style={{ margin: 8 }}
+            placeholder="https://github.com/"
+            fullWidth
+            value={this.state.github}
+            onChange={this.handleChange('github')}
             margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <TextField
-            id="standard-with-placeholder"
-            label="With placeholder"
-            placeholder="Placeholder"
-            className="text-field"
+            id="standard-full-width"
+            label="Twitter Link"
+            type="search"
+            style={{ margin: 8 }}
+            placeholder="https://twitter.com/"
+            fullWidth
+            value={this.state.twitter}
+            onChange={this.handleChange('twitter')}
             margin="normal"
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <TextField
             id="standard-textarea"
@@ -169,24 +228,12 @@ export default class Edit extends Component {
             margin="normal"
           />
           <TextField
-            id="standard-full-width"
-            label="Label"
-            style={{ margin: 8 }}
-            placeholder="Placeholder"
-            helperText="Full width!"
-            fullWidth
-            margin="normal"
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-          <TextField
             id="standard-bare"
             className="text-field"
             defaultValue="Bare"
             margin="normal"
           />
-          <input type="submit" value="Update Post" />
+          <input type="submit" value="Update Post" onClick={this.handleSubmit} />
         </form>
       </div>
     )

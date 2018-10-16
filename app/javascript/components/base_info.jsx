@@ -11,20 +11,9 @@ import sr from './ScrollReveal'
 import Icon from './images/icon.jpg'
 import Facebook from './images/facebook_logo.png'
 import Github from './images/github_logo.png'
+import $ from 'jquery'
 
 export default class BaseInfo extends Component {
-	componentDidMount() {
-    const config = {
-      origin: 'left',
-      duration: 1000,
-      delay: 150,
-      distance: '50px',
-      scale: 1,
-      easing: 'ease',
-    }
-    sr.reveal(this.refs.logo, config)
-  }
-
   constructor(props) {
     super(props)
     this.state = {
@@ -36,8 +25,34 @@ export default class BaseInfo extends Component {
       },
       state: false,
       text: "Show Detail",
+      message: '',
     }
   }
+
+  componentDidMount() {
+    const config = {
+      origin: 'left',
+      duration: 1000,
+      delay: 150,
+      distance: '50px',
+      scale: 1,
+      easing: 'ease',
+    }
+    sr.reveal(this.refs.logo, config)
+    $.ajax({
+      url: "/bases/1",
+      dataType: 'json',
+      cache: false,
+      success: function(message) {
+        console.log(message)
+        this.setState({ message: message })
+      }.bind(this),
+      error: function(_xhr, status, err) {
+        console.error(this.props.url, status, err.toString())
+      }.bind(this)
+    })
+  }
+
 
   handleExpandClick() {
     this.setState((previousState, currentprops) => { if(this.state.state == false) return {style: { display: "block"}, changeCard: { height: 540}, state: true, text: "Close Detail"}
@@ -56,24 +71,33 @@ export default class BaseInfo extends Component {
             	<div className="base-info">
                 <div className="university">
                   <Typography color="textSecondary">
-                  	{this.props.u_name}
+                  	{this.state.message.university}
                   </Typography>
                   <Typography color="textSecondary">
-                    {this.props.d_name}学部
+                    {this.state.message.department}
+                  </Typography>
+                  <Typography color="textSecondary">
+                    {this.state.message.subject}
                   </Typography>
                 </div>
                 <div className="my-name">
+                  <Typography color="textSecondary">
+                    {this.state.message.graduate_year}卒
+                  </Typography>
                   <Typography variant="headline">
-                    {this.props.name}
+                    {this.state.message.name}
                   </Typography>
                   <Typography color="textSecondary">
-                    Maeda&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kanta
+                    {this.state.message.furigana}
                   </Typography>
                 </div>
                 <br/>
                 <div className="access">
                   <Typography color="textSecondary">
-                    Email: s1240236@u-aizu.ac.jp
+                    Email:{this.state.message.email}
+                  </Typography>
+                  <Typography color="textSecondary">
+                    Tel:{this.state.message.tel}
                   </Typography>
                 </div>
               </div>
@@ -95,10 +119,10 @@ export default class BaseInfo extends Component {
         */}
         </Card>
         <div className="card-logo" ref="logo">
-          <a href="https://www.facebook.com/M01tyan">
+          <a href={this.state.message.facebook}>
             <img src={Facebook} className="logo-facebook" />
           </a>
-          <a href="https://github.com/M01tyan">
+          <a href={this.state.message.github}>
             <img src={Github} className="logo-github" />
           </a>
         </div>
